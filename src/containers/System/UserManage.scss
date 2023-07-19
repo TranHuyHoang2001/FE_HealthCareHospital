@@ -1,0 +1,92 @@
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td,
+#customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+  background-color: #ddd;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
+}
+
+.btn-edit {
+  width: 50px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: rgb(231, 174, 69);
+
+  &:hover {
+    cursor: pointer;
+    background-color: transparent !important;
+    color: rgb(233, 187, 101) !important;
+  }
+}
+
+.btn-delete {
+  width: 50px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: rgb(238, 96, 67);
+
+  &:hover {
+    cursor: pointer;
+    background-color: transparent !important;
+    color: rgb(248, 122, 83) !important;
+  }
+}
+
+// className của Modal tại component UserManage (cha)
+.modal-user-container {
+  .modal-content {
+    .modal-header {
+      button {
+        background-color: transparent;
+        color: #f2f2f2;
+        border: none;
+        font-size: 27px;
+      }
+    }
+  }
+
+  .modal-user-body {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      width: 47%;
+
+      // & là ngang cấp vs .input-container class bên ngoài
+      &.max-width-input {
+        width: 96%;
+      }
+      input {
+        border-radius: 3px;
+        height: 30px;
+        border: 1px solid grey;
+        outline: none;
+        padding: 0 10px;
+      }
+    }
+  }
+}

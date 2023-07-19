@@ -1,0 +1,40 @@
+.profile-doctor-container {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  .intro-doctor {
+    // width: 40%;
+    // border-top: 1px solid #ebebeb;
+    display: flex;
+    .content-left {
+      border: 2px solid #fff4f4;
+      background: center center no-repeat;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-size: cover;
+    }
+    .content-right {
+      width: calc(100% - 80px);
+      display: flex;
+      flex-direction: column;
+      padding-left: 10px;
+      .up {
+        font-weight: 600;
+      }
+      .down {
+        // padding-top: 10px;
+        text-align: justify;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        .view-detail-doctor{
+           cursor: pointer;
+        }
+      }
+    }
+  }
+  .price_name_address_clinic{
+    width: 60%;
+  }
+}

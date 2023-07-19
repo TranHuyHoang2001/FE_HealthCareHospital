@@ -1,0 +1,11 @@
+.position{
+    .doctor-name{
+        font-size: 13px;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 5px;
+        &:hover{
+            color: #409eb3;
+        }
+    }
+}

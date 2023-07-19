@@ -1,0 +1,75 @@
+div._loading_overlay_wrapper {
+  position: unset;
+  ._loading_overlay_overlay{
+    z-index: 1300;
+  }
+}
+
+.manage-patient-container {
+  .m-p-title {
+    font-size: 15px;
+    margin: 10px 0;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .manage-patient-body {
+    padding: 0 100px;
+
+    .table-manage-patient {
+      margin-top: 20px;
+      border: 1px solid #e8e8e8;
+      border-radius: 5px;
+      padding: 10px 20px;
+
+      .table-header {
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .table-body {
+        .table-row {
+          border-bottom: 1px solid #e8e8e8;
+          padding: 10px 0;
+
+          .table-cell {
+            padding: 0 10px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333333;
+          }
+        }
+      }
+      button {
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+      .mp-btn-confirm {
+        color: #fff;
+        background-color: #00a65a;
+        border-color: #01703e;
+        padding: 2px 7px;
+        border-radius: 5px;
+        font-size: 14px;
+        margin-right: 10px;
+        font-weight: 600;
+      }
+      .no-data {
+        height: 200px; /* adjust height as needed */
+        .noData {
+          vertical-align: middle;
+          span {
+            font-size: 14px;
+            font-weight: 600;
+            font-style: italic;
+            color: #2e2c2c;
+          }
+        }
+      }
+    }
+  }
+}

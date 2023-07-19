@@ -1,0 +1,201 @@
+.home-header-container {
+  height: 80px;
+  width: 100%;
+  padding: 0 45px;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 1100;
+  .home-header-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    .left-content {
+      width: 20%;
+      display: flex;
+      align-items: center;
+      .header-logo {
+        background: url("../../assets/logo2.svg") center center no-repeat;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        transform: scale(0.75, 0.75);
+        margin-left: -30px;
+      }
+      i {
+        font-size: 25px;
+        color: rgb(182, 171, 158);
+        cursor: pointer;
+      }
+    }
+    .center-content {
+      width: 60%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .child-content {
+        .subs-title {
+          font-weight: 400;
+          font-size: 12px;
+        }
+      }
+    }
+    .right-content {
+      width: 20%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .support {
+        padding-right: 50px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        i {
+          font-size: 20px;
+          color: rgb(182, 171, 158);
+          margin-right: 5px;
+        }
+        span {
+          &:hover {
+            color: #49bce2;
+          }
+        }
+      }
+      .language-vi {
+        cursor: pointer;
+        opacity: 0.2;
+        &.active {
+          opacity: 1;
+          span {
+            color: #49bce2;
+          }
+        }
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+      .language-en {
+        margin: 0 10px;
+        cursor: pointer;
+        opacity: 0.2;
+        &.active {
+          opacity: 1;
+          span {
+            color: #49bce2;
+          }
+        }
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+.home-header-banner {
+  background-image: url("../../assets/images/BackGround 2.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 510px;
+  width: 1370px;
+  display: flex;
+  flex-direction: column;
+  .content-up {
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.25),
+      rgba(255, 255, 255, 0.1)
+    );
+    padding-top: 30px;
+    height: 60%;
+    .title1 {
+      text-align: center;
+      font-size: 30px;
+      text-shadow: 1px 1px 1px #333;
+      margin-bottom: 10px;
+      color: #fff;
+      padding-top: 30px;
+    }
+    .title2 {
+      text-align: center;
+      font-size: 30px;
+      text-shadow: 1px 1px 1px #333;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .search {
+      width: fit-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      padding: 10px;
+      border-radius: 25px;
+      background: #f7d800;
+      box-shadow: 0 0 10px #f7d800;
+      i {
+        margin: 0 10px;
+      }
+      input {
+        width: 360px;
+        height: 30px;
+        background: transparent;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+  .content-down {
+    height: 40%;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-image: linear-gradient(
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 1)
+    );
+    .options {
+      text-align: center;
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+      .option-child {
+        width: 120px;
+        .icon-child {
+          background: #0f2e4f;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          padding: 10px;
+          text-align: center;
+          margin: 0 auto;
+
+          i {
+            font-size: 20px;
+            color: #49bce2;
+          }
+        }
+
+        .text-child {
+          text-align: center;
+          color: rgb(0, 0, 0);
+          font-size: 17px;
+          margin-top: 10px;
+          font-weight: bold;
+          cursor: pointer;
+
+          &:hover {
+            color: #49bce2;
+          }
+        }
+      }
+    }
+  }
+}

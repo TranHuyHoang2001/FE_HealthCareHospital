@@ -1,0 +1,14 @@
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Change the background color to semi-transparent black */
+  z-index: 9999; /* Make sure the overlay is on top of everything */
+  pointer-events: auto; /* Allow pointer events (e.g., clicks) on the overlay */
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1; /* Make the overlay fully visible */
+  transition: opacity 200ms ease-in-out; /* Add a transition effect to the opacity change */
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0; /* Make the overlay fully transparent */
+}

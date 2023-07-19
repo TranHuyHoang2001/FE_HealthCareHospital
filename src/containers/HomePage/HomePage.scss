@@ -1,0 +1,309 @@
+//reset slick slider css
+
+.slick-prev {
+  left: -10px !important;
+  z-index: 1000 !important;
+  width: 44px !important;
+  height: 46px !important;
+  background: transparent !important;
+  border: 2px solid #d7d7d7 !important;
+
+  content: "\f104";
+  font-family: "Font Awesome 5 Free";
+
+  &:hover {
+    background: #eeeded !important;
+  }
+}
+.slick-prev:before,
+.slick-next:before {
+  //font-family: "Glyphicons Halflings" !important;
+  color: rgb(176, 168, 168) !important;
+  //content: "\e257" !important;  //unicode fontawesome
+  background-color: #fff !important;
+  padding: 11px 10px;
+}
+.slick-next {
+  right: -10px !important;
+  z-index: 1000 !important;
+  width: 44px !important;
+  height: 46px !important;
+  background: transparent !important;
+  border: 2px solid #d7d7d7 !important;
+
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+
+  &:hover {
+    background: #eeeded !important;
+  }
+}
+
+.slick-disabled {
+  display: none !important;
+}
+
+.section-share {
+  &.section-specialty {
+    background: #f5f5f5;
+  }
+  &.section-outstanding-doctor {
+    background: #f5f5f5;
+    height: 345px;
+  }
+  &.section-about {
+    height: 380px !important;
+    border-top: 1px solid #e9e2e2;
+    border-bottom: 1px solid #e9e2e2;
+  }
+  .section-body {
+    .section-customize {
+      .bg-image {
+        width: 278px;
+        height: 150px;
+        background-position: center center;
+        background-repeat: no-repeat !important;
+        background-size: cover;
+        background-color: #eee;
+
+        &.section-specialty {
+          // background-image: url("../../assets/specialty/co-xuong-khop.jpg");
+        }
+
+        &.section-medical-facility {
+          // background-image: url("../../assets/medical-facility/benh-vien-thu-cuc.jpg");
+        }
+
+        &.section-outstanding-doctor {
+          // background-image: url("../../assets/outstanding-doctor/anh-dai-dien-bs.jpg");
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+        }
+
+        &.section-handbook {
+          background-image: url("../../assets/HandBook/HandBook.png");
+        }
+      }
+    }
+  }
+}
+
+.section-share {
+  height: 330px;
+
+  .section-container {
+    margin: 0 100px;
+    display: flex;
+    flex-direction: column;
+    .section-header {
+      height: 60px;
+      margin-bottom: 30px;
+      padding-top: 30px;
+
+      .title-section {
+        font-size: 23px;
+        font-weight: bold;
+      }
+      .btn-section {
+        float: right;
+        padding: 10px 15px;
+        border: none;
+        outline: none;
+        display: block;
+        background-color: #ebebeb;
+        color: black;
+        cursor: pointer;
+        text-transform: uppercase;
+        &:hover {
+          color: #fff;
+          background: #00d0ff;
+        }
+      }
+    }
+  }
+}
+
+.section-outstanding-doctor {
+  .outer-bg {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .section-customize {
+    padding: 5px;
+    cursor: pointer;
+    .customize-border {
+      border: 1px solid #c3c3c3;
+      padding: 20px;
+    }
+  }
+}
+
+.home-footer {
+  background: #efefef;
+  .bonusText {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 150px;
+    .text {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+  .License {
+    background: #6de9fa;
+    text-align: center;
+    padding-top: 8px;
+    p {
+      margin: 0 !important;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+  .footer-container {
+    margin: 0 90px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .footer-info {
+      width: 40%;
+      .footerLogo {
+        cursor: pointer;
+        max-width: 200px;
+        width: 200px;
+        height: 100px;
+        display: inline-block;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url("../../assets/logo2.svg");
+      }
+      .tieuDe {
+        font-size: 17px;
+        font-weight: bold;
+        padding-bottom: 10px;
+      }
+      .location,
+      .DKKD {
+        display: flex;
+        gap: 1rem;
+        padding-bottom: 7px;
+      }
+    }
+    .footer-other {
+      display: flex;
+      flex-direction: row;
+      .footer-center {
+        padding-top: 20px;
+        padding-right: 90px;
+        li {
+          list-style: none;
+          font-size: medium;
+        }
+      }
+      .footer-right {
+        padding-top: 20px;
+        .TruSo,
+        .VanPhong {
+          padding-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+.section-about {
+  padding: 0 100px;
+  .section-about-header {
+    padding: 20px 10px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  .content-left {
+    width: 40%;
+    display: block;
+    float: left;
+  }
+  .content-center {
+    background-image: url("../../assets/About-TruyenThong/banner1.png");
+    width: 60%;
+    height: 105px;
+    background-repeat: repeat;
+    display: flex;
+    .truyenthong-banner {
+      width: 309px;
+      height: 100px;
+      background-size: 285px 80px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      display: inline-block;
+      border-radius: 5px;
+    }
+  }
+  .content-right {
+    padding-top: 20px;
+    display: block;
+    // width: 60%;
+    // overflow-x: auto;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+
+      .truyenthong-bt {
+        background-position: center center;
+        background-repeat: no-repeat;
+        display: inline-block;
+        border-radius: 5px;
+
+        &.truyenthong-suckhoedoisong {
+          width: 162px;
+          height: 50px;
+          background-size: 142px 30px;
+        }
+        &.truyenthong-cnntbyt {
+          width: 127px;
+          height: 50px;
+          background-size: 107px 40px;
+        }
+        &.truyenthong-vtcnews {
+          width: 151px;
+          height: 50px;
+          background-size: 131px 30px;
+          background-color: #a3171e;
+        }
+        &.truyenthong-vnexpress {
+          width: 183px;
+          height: 50px;
+          background-size: 163px 30px;
+        }
+        &.truyenthong-ictnews {
+          width: 127px;
+          height: 50px;
+          background-size: 107px 30px;
+        }
+        &.truyenthong-vtvgo {
+          width: 127px;
+          height: 50px;
+          background-size: 107px 30px;
+        }
+        &.truyenthong-vinmec {
+          width: 178px;
+          height: 45px;
+          background-size: 81px 45px;
+        }
+        &.truyenthong-infonet {
+          width: 129px;
+          height: 50px;
+          background-size: 109px 30px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.verify-email-container {
+  .loader-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.834);
+    z-index: 1;
+    .spinner {
+      width: 64px;
+      height: 64px;
+      border: 8px solid;
+      border-color: #3d5af1 transparent #3d5af1 transparent;
+      border-radius: 50%;
+      animation: spin-anim 1.2s linear infinite;
+    }
+
+    @keyframes spin-anim {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+  .Infor-Booking {
+    .infor-booking {
+      font-size: 17px;
+      font-weight: 600;
+      margin-top: 30px;
+      text-align: center;
+      text-transform: uppercase;
+      &.success {
+        color: #00b050;
+      }
+      &.fail {
+        color: #ff0000;
+      }
+    }
+    .Bg-verify {
+      background: url(../../assets/skincancerteamillustration.jpg) no-repeat
+        center center;
+      background-size: cover;
+      height: 70%;
+      width: 100%;
+      background-size: contain;
+      position: absolute;
+      z-index: -1;
+    }
+  }
+}
