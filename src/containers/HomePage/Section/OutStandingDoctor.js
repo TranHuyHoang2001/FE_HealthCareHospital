@@ -61,6 +61,8 @@ class OutStandingDoctor extends Component {
                   }
                   let nameVi = `${item.positionData.valueVi}, ${item.lastName} ${item.firstName} `;
                   let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`;
+                  console.log('id ' + item.id);
+                  
                   return (
                     <div
                       className="section-customize"
@@ -81,7 +83,7 @@ class OutStandingDoctor extends Component {
                           <div className="doctor-name">
                             {language === LANGUAGES.VI ? nameVi : nameEn}
                           </div>
-                          <div className="doctor-specialty">Cơ xương khớp</div>
+                          <div className="doctor-specialty"></div>
                         </div>
                       </div>
                     </div>

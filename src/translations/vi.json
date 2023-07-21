@@ -143,6 +143,13 @@
       "clinic-image": "Ảnh phòng khám",
       "clinic-address": "Địa chỉ phòng khám",
       "clinic-save": "Lưu"
+    },
+    "manage-handbook": {
+      "title": "QUẢN LÝ CẨM NANG",
+      "handbook-name": "Tên cẩm nang",
+      "handbook-image": "Ảnh cẩm nang",
+      "handbook-author": "Tác giả, Cố vấn y khoa, Người kiểm duyệt",
+      "handbook-save": "Lưu"
     }
   }
 }

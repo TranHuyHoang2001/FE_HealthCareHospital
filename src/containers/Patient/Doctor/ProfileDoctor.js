@@ -142,7 +142,7 @@ class ProfileDoctor extends Component {
           </div>
         </div>
 
-        <div class="price_name_address_clinic">
+        <div className="price_name_address_clinic">
           {isShowPriceAddressNameClinic === true && (
             <div className="price-address-name-clinic">
               {" "}

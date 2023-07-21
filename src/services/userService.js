@@ -46,6 +46,10 @@ const getDetailInforDoctor = (inputId) => {
   return axios.get(`/api/get-detail-doctor-by-id?id=${inputId}`);
 };
 
+const getSpecialtyById = (inputId) => {
+  return axios.get(`/api/get-specialty-by-id?id=${inputId}`);
+};
+
 const saveBulkScheduleDoctor = (data) => {
   return axios.post("/api/bulk-create-schedule", data);
 };
@@ -103,6 +107,18 @@ const postSendRemedy = (data) => {
   return axios.post("/api/send-remedy", data);
 };
 
+const createNewHandbook = (data) => {
+  return axios.post("/api/create-new-handbook", data);
+};
+
+const getAllHandbook = () => {
+  return axios.get(`/api/get-handbook`);
+};
+
+const getAllDetailHandbookById = (data) => {
+  return axios.get(`/api/get-detail-handbook-by-id?id=${data.id}`);
+};
+
 export {
   handleLoginApi,
   getAllUsers,
@@ -114,6 +130,7 @@ export {
   getAllDoctors,
   saveDetailDoctorService,
   getDetailInforDoctor,
+  getSpecialtyById,
   saveBulkScheduleDoctor,
   getScheduleDoctorByDate,
   getExtraInforDoctorById,
@@ -128,4 +145,7 @@ export {
   getAllDetailClinicById,
   getAllPatientForDoctor,
   postSendRemedy,
+  createNewHandbook,
+  getAllHandbook,
+  getAllDetailHandbookById,
 };
