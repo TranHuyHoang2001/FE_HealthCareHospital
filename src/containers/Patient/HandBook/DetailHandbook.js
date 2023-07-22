@@ -10,6 +10,8 @@ import {
 } from "../../../services/userService";
 import _ from "lodash";
 import { LANGUAGES } from "../../../utils";
+import LikeAndShare from "../SocialPlugin/LikeAndShare";
+import Comment from "../SocialPlugin/Comment";
 
 class DetailHandbook extends Component {
   constructor(props) {
@@ -45,9 +47,13 @@ class DetailHandbook extends Component {
     }
   }
 
+
   render() {
     let { dataDetailHandbook } = this.state;
     let { language } = this.props;
+    let currentURL = process.env.REACT_APP_IS_LOCALHOST === 1
+        ? "https://tranhuyhoang-chatbot.onrender.com"
+        : window.location.href;
 
     return (
       <>
@@ -64,8 +70,6 @@ class DetailHandbook extends Component {
                   <div>
                     <img src={dataDetailHandbook.image} alt="" />
                   </div>
-
-                  {console.log('check abc ', dataDetailHandbook.image)}
                   <br />
                   <div
                     dangerouslySetInnerHTML={{
@@ -74,6 +78,12 @@ class DetailHandbook extends Component {
                   ></div>
                 </>
               )}
+                <div className="like-share-plugin">
+                  <LikeAndShare dataHref={currentURL} />
+                </div>
+                <div className="comment-handbook">
+                  <Comment dataHref={currentURL} width={"100%"} />
+                </div>
             </div>
           </div>
           <HomeFooter />

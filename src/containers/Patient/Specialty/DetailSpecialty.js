@@ -20,6 +20,8 @@ class DetailSpecialty extends Component {
     this.state = {
       arrDoctorId: [],
       dataDetailSpecialty: {},
+      nameSpecialty: "",
+      imageSpecialty: "",
       listProvince: [],
     };
   }
@@ -69,6 +71,8 @@ class DetailSpecialty extends Component {
           //res.data (tra ve thuoc tinh data cua object res specialtyService (getDetailSpecialtyById))
           arrDoctorId: arrDoctorId,
           listProvince: dataProvince ? dataProvince : [],
+          nameSpecialty: "Chuyên khoa : " + res.data.name,
+          imageSpecialty: res.data.image
         });
       }
     }
@@ -117,7 +121,7 @@ class DetailSpecialty extends Component {
   };
 
   render() {
-    let { arrDoctorId, dataDetailSpecialty, listProvince } = this.state;
+    let { arrDoctorId, dataDetailSpecialty, listProvince, nameSpecialty, imageSpecialty } = this.state;
     let { language } = this.props;
 
     return (
@@ -125,6 +129,7 @@ class DetailSpecialty extends Component {
         <HomeHeader />
         <div className="detail-specialty-body">
           <div className="description-specialty">
+          <div className="name-specialty">{nameSpecialty}</div>
             {dataDetailSpecialty && !_.isEmpty(dataDetailSpecialty) && (
               <div
                 dangerouslySetInnerHTML={{
@@ -132,6 +137,9 @@ class DetailSpecialty extends Component {
                 }}
               ></div>
             )}
+            <div className="image-specialty">
+                <img src={imageSpecialty} alt="" />
+            </div>
           </div>
           <div className="search-sp-doctor">
             <select onChange={(event) => this.handleOnChangeSelect(event)}>
