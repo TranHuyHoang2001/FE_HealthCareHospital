@@ -1,87 +1,103 @@
 .login-background {
-  background: rgb(34, 193, 195);
-  background: linear-gradient(
-    135deg,
-    rgba(34, 193, 195, 1) 0%,
-    rgba(253, 187, 45, 1) 100%
-  );
+  display: flex;
+  flex-direction: row;
   height: 100vh;
 
-  .login-container {
-    width: 400px;
-    height: 450px;
-    margin: auto;
-    border-radius: 15px;
-    background-color: white;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  .login-left{
+    width: 55%;
+    background-image: url("../../assets/LoginBgLeft.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .login-right{
+    width: 45%;
+    position: relative;
+      .login-container {
+        width: 400px;
+        height: 450px;
+        margin: auto;
+        border-radius: 15px;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        box-shadow: 0 1px 6px #20212447;
+        border-radius: 8px;
 
-    .login-content {
-      padding: 10px;
+        .login-content {
+          padding: 10px;
 
-      .text-login {
-        text-align: center;
-        font-size: 30px;
-        font-weight: 600;
-        padding-top: 10px;
-      }
+           .LoginLogo{
+                background: url("../../assets/logo2.svg") center center no-repeat;
+                width: 100%;
+                height: 100px;
+                cursor: pointer;
+                transform: scale(0.75, 0.75);
+          }
 
-      .login-input {
-        margin: 7px 0;
+          .text-login {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 600;
+            padding-top: 10px;
+          }
 
-        .custom-input-password{
-           position: relative;
+          .login-input {
+            margin: 7px 0;
 
-           i {
-              position: absolute;
-              right: 10px;
-              top: 10px;
-              cursor: pointer;
-           }
+            .custom-input-password{
+              position: relative;
+
+              i {
+                  position: absolute;
+                  right: 10px;
+                  top: 10px;
+                  cursor: pointer;
+              }
+            }
+          }
+
+          .btn-login {
+            width: 100%;
+            margin: 10px 0;
+            height: 30px;
+            border-radius: 25px;
+            outline: none;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            background-color: #22c1c3;
+            color: white;
+            font-size: 16px;
+          }
+
+          .forgot-password {
+            font-size: 12px;
+          }
+
+          .social-login {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 10px;
+
+            i {
+              font-size: 30px;
+            }
+            .google {
+              color: rgb(243, 65, 65);
+              margin-right: 20px;
+            }
+            .facebook {
+              color: rgb(83, 83, 252);
+              margin-right: 20px;
+            }
+            .twitter {
+              color: rgb(0, 172, 237);
+            }
+          }
         }
       }
-
-      .btn-login {
-        width: 100%;
-        margin: 10px 0;
-        height: 30px;
-        border-radius: 25px;
-        outline: none;
-        border: none;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-        background-color: #22c1c3;
-        color: white;
-        font-size: 16px;
-      }
-
-      .forgot-password {
-        font-size: 12px;
-      }
-
-      .social-login {
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        margin-top: 10px;
-
-        i {
-          font-size: 30px;
-        }
-        .google {
-          color: rgb(243, 65, 65);
-          margin-right: 20px;
-        }
-        .facebook {
-          color: rgb(83, 83, 252);
-          margin-right: 20px;
-        }
-        .twitter {
-          color: rgb(0, 172, 237);
-        }
-      }
-    }
   }
 }

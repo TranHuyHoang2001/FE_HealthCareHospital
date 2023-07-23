@@ -67,6 +67,9 @@ class DetailHandbook extends Component {
                   <hr />
                   <div className="AuthorHandBook">{dataDetailHandbook.author}</div>
                   <hr />
+                  <div className="like-share-plugin">
+                  <LikeAndShare dataHref={currentURL} />
+                  </div>
                   <div>
                     <img src={dataDetailHandbook.image} alt="" />
                   </div>
@@ -78,9 +81,6 @@ class DetailHandbook extends Component {
                   ></div>
                 </>
               )}
-                <div className="like-share-plugin">
-                  <LikeAndShare dataHref={currentURL} />
-                </div>
                 <div className="comment-handbook">
                   <Comment dataHref={currentURL} width={"100%"} />
                 </div>
