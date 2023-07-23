@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { FormattedMessage } from "react-intl";
 import "./DetailClinic.scss";
 import HomeHeader from "../../HomePage/HomeHeader";
 import HomeFooter from "../../HomePage/HomeFooter";
@@ -9,10 +8,10 @@ import DoctorExtraInfor from "../Doctor/DoctorExtraInfor";
 import ProfileDoctor from "../Doctor/ProfileDoctor";
 import {
   getAllDetailClinicById,
-  getAllCodeService,
 } from "../../../services/userService";
 import _ from "lodash";
-import { LANGUAGES } from "../../../utils";
+import GoogleMapReact from 'google-map-react';
+import { geocodeByAddress, getLatLng } from 'react-google-places-autocomplete';
 
 class DetailClinic extends Component {
   constructor(props) {
@@ -20,6 +19,7 @@ class DetailClinic extends Component {
     this.state = {
       arrDoctorId: [],
       dataDetailClinic: {},
+      coords: null,
     };
   }
 
@@ -53,8 +53,11 @@ class DetailClinic extends Component {
           //res.data (tra ve thuoc tinh data cua object res clinicService (getDetailClinicById))
           arrDoctorId: arrDoctorId,
         });
+        // Perform geocoding after getting the clinic data
+        this.performGeocoding(data.address);
       }
     }
+
   }
 
   async componentDidUpdate(prevProps, prevState, snapshot) {
@@ -62,9 +65,22 @@ class DetailClinic extends Component {
     }
   }
 
+  async performGeocoding(address) {
+    try {
+      const results = await geocodeByAddress(address);
+      const { lat, lng } = await getLatLng(results[0]);
+      // Set the state with the obtained coordinates
+      this.setState({ coords: { lat, lng } });
+    } catch (error) {
+      console.error('Error during geocoding:', error);
+    }
+  }
+
+
   render() {
-    let { arrDoctorId, dataDetailClinic } = this.state;
-    let { language } = this.props;
+    let { arrDoctorId, dataDetailClinic, coords } = this.state;
+
+    const Position = ({ icon }) => <div>{icon}</div>;
 
     return (
       <>
@@ -83,6 +99,28 @@ class DetailClinic extends Component {
                       __html: dataDetailClinic.descriptionHTML,
                     }}
                   ></div>
+                  <div className="Map">
+                    <div className="Map-Text">Bản đồ cơ sở y tế</div>
+                    <div className="GG-Map" style={{ height: '300px', width: '100%' }}>
+                      <div className="Address-GG-Map">
+                        {dataDetailClinic.address}
+                      </div>
+                      <GoogleMapReact
+                        bootstrapURLKeys={{ key: process.env.REACT_APP_MAP_API }}
+                        defaultCenter={coords}
+                        defaultZoom={11}
+                        center={coords}
+                      >
+                          {coords && (
+                            <Position
+                              lat={coords?.lat}
+                              lng={coords?.lng}
+                              icon={<i className="fas fa-map-marker-alt" style={{ color: "red", fontSize: "24px" }} aria-hidden="true"></i>}
+                            />
+                          )}
+                      </GoogleMapReact>
+                    </div>
+                  </div>
                 </>
               )}
             </div>

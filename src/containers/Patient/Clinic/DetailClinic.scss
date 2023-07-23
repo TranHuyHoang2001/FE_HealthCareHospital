@@ -33,6 +33,29 @@
           margin: 10px 0;
         }
       }
+
+      .Map{
+        .Map-Text{
+          font-size: 1.2rem;
+          font-weight: 600;
+          margin: 10px 0;
+        }
+        .GG-Map{
+          position:relative;
+          .Address-GG-Map{
+            position:absolute;
+            top: 8px;
+            left: 8px;
+            z-index: 50;
+            max-width: 100%;
+            background-color: #fff;
+            box-shadow: 0 1px 6px #20212447;
+            border-radius: 8px;
+            padding: 4px;
+            font-size:.9rem;
+          }
+        }
+      }
     }
 
     .each-doctor {
