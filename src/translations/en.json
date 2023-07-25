@@ -115,6 +115,9 @@
     },
     "list-doctor": {
       "search-doctor": "Search doctor"
+    },
+    "list-handbook": {
+      "new-handbook": "New handbook"
     }
   },
   "admin": {

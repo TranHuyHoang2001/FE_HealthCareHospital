@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
-import Slider from "react-slick";
 import {getAllHandbook} from "../../../services/userService";
 import "./ListHandBook.scss";
 import { withRouter } from "react-router";
 import HomeFooter from "../../HomePage/HomeFooter";
 import HomeHeader from "../../HomePage/HomeHeader";
-
+import TruncatedText from "./TruncatedText";
 
 class ListHandBook extends Component {
    constructor(props) {
@@ -42,34 +41,56 @@ class ListHandBook extends Component {
     return (
       <>
       <HomeHeader/>
-        <div className="section-container">
-          <div className="section-header">
-            <span className="title-section"><FormattedMessage id="homeheader.handbook" /></span>
-            <button className="btn-section">xem thêm</button>
+        <div className="list-handbook-container">
+          <div className="list-handbook-header">
+            <div className="home-icon">
+              <i className="fas fa-home"
+              onClick={() => this.returnToHome()}
+              ></i> / <FormattedMessage id="homeheader.handbook"/>
+            </div>
+            <div className="title-search">
+              <span className="title-text">
+                <FormattedMessage id="patient.list-handbook.new-handbook" />
+              </span>
+              <div className="search-list">
+                  {/* <input type="text" placeholder="Tìm chuyên khoa khám bệnh" /> */}
+                  <FormattedMessage id="banner.search" defaultMessage="Tìm kiếm">
+                    {(placeholder) => <input placeholder={placeholder} />}
+                  </FormattedMessage>
+                  <i className="fas fa-search"></i>
+              </div>
+            </div>
           </div>
-          <div className="section-body">
-            <Slider {...this.props.settings}>
+          <div className="list-handbook-body">
               {dataHandbooks && dataHandbooks.length > 0 &&
                   dataHandbooks.map((item, index) => {
+                // Extract text from descriptionHTML
+                const parser = new DOMParser();
+                const parsedDescription = parser.parseFromString(item.descriptionHTML, 'text/html');
+                const descriptionText = parsedDescription.body.textContent || '';
                     return (
-                      <div className="section-customize handbook-child"
+                      <div className="handbook-container"
                        key={index}
                        onClick={() => this.handleViewDetailHandbook(item)}
                        >
-                       <div className="bg-image section-handbook" 
-                        style={{
-                          backgroundImage: `url(${item.image})`,
-                        }}
-                       />
+                          <div className="handbook-box">
+                            <div className="handbook-image">
+                              <img src={item.image} alt="handbook" />
+                            </div>
 
-                      <div className="handbook-name-container">
-                          <span className="handbook-name">{item.name}</span>
-                        </div>
+                            <div className="handbook-name-des">
+                              <div className="handbook-name">
+                                  <span>{item.name}</span>
+                              </div>
+                              <div className="handbook-des">
+                                  <TruncatedText text={descriptionText} maxLength={200} />
+                              </div>
+                            </div>
+                          </div>                        
                       </div>
                      )
                   })
               }  
-            </Slider>
           </div>{" "}
         </div>
       <HomeFooter/>

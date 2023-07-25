@@ -115,6 +115,9 @@
     },
     "list-doctor": {
       "search-doctor": "Tìm kiếm bác sĩ"
+    },
+    "list-handbook": {
+      "new-handbook": "Bài viết mới nhất"
     }
   },
   "admin": {

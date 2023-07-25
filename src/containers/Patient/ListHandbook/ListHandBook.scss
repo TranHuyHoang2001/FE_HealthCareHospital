@@ -1,20 +1,70 @@
-.handbook-child {
-  cursor: pointer;
-  .section-handbook {
-    background-position: center center;
-    background-repeat: no-repeat !important;
-    background-size: contain !important;
-    background-color: #ffffff !important;
-  }
-  .handbook-name-container {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    .handbook-name {
-      padding: 10px 0;
-      &:hover {
-        color: #409eb3;
-      }
+.list-handbook-container{
+  margin: 0 100px 100px 100px;
+  .list-handbook-header{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 10px;
+    .home-icon{
+      color: #007bff;
     }
+    .title-search{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+          .title-text{
+            padding: 10px 0;
+            font-weight: 600;
+            font-size: x-large;
+          }
+          .search-list {
+            margin: 10px 0;
+            padding: 0 10px;
+            width: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 27px;
+            background-color: rgba(245,245,245,1.00);
+            border: 1px solid rgba(204,204,204,1.00);
+            i {
+              margin: 0 10px;
+            }
+            input {
+              width: 360px;
+              height: 44px;
+              background: transparent;
+              border: none;
+              outline: none;
+            }
+          }
+    }
+  }
+  .list-handbook-body{
+      padding: 20px 100px;
+      .handbook-container{
+          cursor: pointer;
+          display: block;
+          padding: 15px;
+          border-bottom: 1px solid #eee;
+          .handbook-box{
+              display: flex;
+              flex-direction: row;
+              gap: 30px;
+              .handbook-image{
+                  img{
+                      width: 190px;
+                      border: 2px solid #fff4f4;
+                  }
+              }
+              .handbook-name-des{
+                .handbook-name{
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: #007bff;
+                }
+              }
+          }
+      }
   }
 }
