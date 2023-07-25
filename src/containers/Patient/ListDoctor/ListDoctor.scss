@@ -1,0 +1,104 @@
+.list-doctor-container{
+    .list-doctor-header{
+        .arrow-icon{
+            display:flex;
+            flex-direction: row;
+            background: #fff;
+            position: fixed;
+            width: 100%;
+            height: 50px;
+            top: 0;
+            left: 0;
+            padding-left: 50px;
+            -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+            -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+            box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+            z-index: 2;
+            .arrow-left{
+                position: absolute;
+                height: 50px;
+                width: 50px;
+                top: 0;
+                left: 0;
+                line-height: 50px;
+                text-align: center;
+                border: none;
+                background: transparent;
+                box-shadow: none;
+                outline: none;
+                cursor: pointer;
+                margin-left: 30px;
+            }
+            .title-arrow{
+                line-height: 50px;
+                font-size: 20px;
+                margin-left: 50px;
+            }
+        }
+        .title-search{
+                position: fixed;
+                width: 100%;
+                left: 0;
+                background: #f5f5f5;
+                top: 50px;
+                height: 50px;
+                padding: 10px 15px;
+                z-index: 1;
+            .search-list{
+                height: 30px;
+                padding: 10px 15px;
+                background: rgba(255, 255, 255, 0.7);
+                width: 100%;
+                border: 1px solid #ccc;
+                border-radius: 20px;
+                margin: 0 auto;
+                width: fit-content;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 27px;
+                background-color: rgba(245,245,245,1.00);
+                border: 1px solid rgba(204,204,204,1.00);
+                i {
+                margin: 0 10px;
+                }
+                input {
+                width: 360px;
+                height: 44px;
+                background: transparent;
+                border: none;
+                outline: none;
+                }
+            }
+        }
+    }
+    .section-body{
+        padding-top: 120px;
+        .title-text{
+           padding: 10px 100px;
+           font-weight: bold;
+           font-size: large;
+        }
+        .search-doctor-results{
+        }
+        .doctor-container{
+            cursor: pointer;
+            display: block;
+            padding: 15px 100px;
+            border-bottom: 1px solid #eee;
+            .outstanding-doctor{
+                display: flex;
+                flex-direction: row;
+                gap: 40px;
+                .doctor-image{
+                    img{
+                        width: 80px;
+                        border-radius: 50%;
+                        border: 2px solid #fff4f4;
+                    }
+
+                }
+            }
+        }
+    }
+}

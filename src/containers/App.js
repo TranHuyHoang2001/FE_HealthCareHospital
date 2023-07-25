@@ -23,6 +23,10 @@ import VerifyEmail from "./Patient/VerifyEmail";
 import DetailSpecialty from "./Patient/Specialty/DetailSpecialty";
 import DetailClinic from "./Patient/Clinic/DetailClinic";
 import DetailHandbook from "./Patient/HandBook/DetailHandbook";
+import ListClinic from "./Patient/ListClinic/ListClinic";
+import ListDoctor from "./Patient/ListDoctor/ListDoctor";
+import ListSpecialty from "./Patient/ListSpecialty/ListSpecialty";
+import ListHandBook from "./Patient/ListHandbook/ListHandBook";
 
 class App extends Component {
   handlePersistorState = () => {
@@ -77,6 +81,22 @@ class App extends Component {
                   <Route
                     path={path.DETAIL_HANDBOOK}
                     component={DetailHandbook}
+                  />
+                  <Route
+                    path={path.LIST_CLINIC}
+                    component={ListClinic}
+                  />
+                  <Route
+                    path={path.LIST_DOCTOR}
+                    component={ListDoctor}
+                  />
+                  <Route
+                    path={path.LIST_SPECIALTY}
+                    component={ListSpecialty}
+                  />
+                  <Route
+                    path={path.LIST_HANDBOOK}
+                    component={ListHandBook}
                   />
 
                   <Route

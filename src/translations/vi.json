@@ -7,6 +7,7 @@
     "doctor": "Bác sĩ",
     "select-doctor": "Chọn bác sĩ giỏi",
     "examination package": "Gói khám",
+    "handbook": "Cẩm nang",
     "examination general": "Khám sức khoẻ tổng quát",
     "support": "Hỗ trợ",
     "welcome": "Xin chào, "
@@ -61,7 +62,8 @@
     "outstanding-doctor": "Bác sĩ nổi bật",
     "more-infor": "Xem thêm",
     "speciality-popular": "Chuyên khoa phổ biến",
-    "health-facility": "Cơ sở y tế nổi bật"
+    "health-facility": "Cơ sở y tế nổi bật",
+    "social-health-hospital": "Truyền Thông Health Hospital"
   },
   "manage-schedule": {
     "title": "Quản lý kế hoạch khám bệnh của bác sĩ",
@@ -107,6 +109,12 @@
     },
     "detail-schedule": {
       "more-infor": "Xem thêm"
+    },
+    "list-clinic": {
+      "all-clinic": "Tất cả cơ sở y tế"
+    },
+    "list-doctor": {
+      "search-doctor": "Tìm kiếm bác sĩ"
     }
   },
   "admin": {

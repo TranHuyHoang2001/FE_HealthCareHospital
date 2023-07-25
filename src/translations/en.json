@@ -7,6 +7,7 @@
     "doctor": "Doctor",
     "select-doctor": "Select Doctor",
     "examination package": "Examination Package",
+    "handbook": "Handbook",
     "examination general": "Examination General",
     "support": "Support",
     "welcome": "Welcome, "
@@ -61,7 +62,8 @@
     "outstanding-doctor": "Prominent physician of the week",
     "more-infor": "More",
     "speciality-popular": "Medical Specialty Popular",
-    "health-facility": "Health Facility"
+    "health-facility": "Health Facility",
+    "social-health-hospital": "Social Health Hospital"
   },
   "manage-schedule": {
     "title": "Manage doctor's examination plan",
@@ -107,6 +109,12 @@
     },
     "detail-schedule": {
       "more-infor": "more..."
+    },
+    "list-clinic": {
+      "all-clinic": "All medical facility available"
+    },
+    "list-doctor": {
+      "search-doctor": "Search doctor"
     }
   },
   "admin": {

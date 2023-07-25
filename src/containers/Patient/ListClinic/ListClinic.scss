@@ -1,0 +1,96 @@
+.list-clinic-container{
+  margin: 0 100px;
+  .list-clinic-header{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 10px;
+    .home-icon{
+      color: #007bff;
+    }
+    .title-search{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+          .title-text{
+            padding: 10px 0;
+            font-weight: 600;
+            font-size: x-large;
+          }
+          .search-list {
+            margin: 10px 0;
+            padding: 0 10px;
+            width: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 27px;
+            background-color: rgba(245,245,245,1.00);
+            border: 1px solid rgba(204,204,204,1.00);
+            i {
+              margin: 0 10px;
+            }
+            input {
+              width: 360px;
+              height: 44px;
+              background: transparent;
+              border: none;
+              outline: none;
+            }
+          }
+    }
+  }
+  .list-clinic-body{
+    margin-bottom: 100px;
+    display: flex;
+    flex-flow: wrap;
+    padding-top: 25px;
+    justify-content: space-around;
+    border-top: 2px solid rgb(231, 229, 229);
+    .clinic-container {
+      cursor: pointer;
+      // border: 1px solid rgb(231, 229, 229);
+      margin: 10px 0;
+      padding-right: 10px;
+      padding-left: 10px;
+      width: 24%;
+      .medical-facility {
+        display: flex;
+        aspect-ratio: 1.77778 / 1;
+        border: 2px solid rgb(213, 213, 213);
+        border-radius: 5px;
+        background-color: rgb(255, 255, 255);
+        padding: 15px;
+        position: relative;
+        img{
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          inset: 0px;
+          object-fit: contain;
+          color: transparent;
+          padding: inherit;
+          box-sizing: border-box;
+        }
+      }
+      .clinic-name-child {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        .clinic-name-text {
+          padding: 10px 0;
+          font-size: 16px;
+          color: rgb(40, 49, 63);
+          padding-top: 10px;
+          font-weight: 700;
+          display: flex;
+          text-align: center;
+          justify-content: center;
+          &:hover {
+            color: #409eb3;
+          }
+        }
+      }
+    }
+  }
+}

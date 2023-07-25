@@ -56,7 +56,7 @@ class DetailDoctor extends Component {
 
   render() {
     console.log(this.state);
-    let { detailDoctor } = this.state;
+    let { detailDoctor, specialtyName } = this.state;
     let { language } = this.props;
     let nameVi = "",
       nameEn = "";
@@ -89,7 +89,7 @@ class DetailDoctor extends Component {
                 {language === LANGUAGES.VI ? nameVi : nameEn}
               </div>
               <div>          
-                <FormattedMessage id="homeheader.speciality" /> {this.state.specialtyName}
+                <FormattedMessage id="homeheader.speciality" /> {specialtyName}
               </div>
               <div className="down">
                 {detailDoctor.Markdown && detailDoctor.Markdown.description && (

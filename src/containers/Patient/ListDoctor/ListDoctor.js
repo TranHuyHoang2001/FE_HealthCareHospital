@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
-import Slider from "react-slick";
 import * as actions from "../../../store/actions/index";
 import { LANGUAGES } from "../../../utils";
 import { withRouter } from "react-router";
-import "./OutStandingDoctor.scss";
+import "./ListDoctor.scss";
 
-class OutStandingDoctor extends Component {
+class ListDoctor extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,31 +32,46 @@ class OutStandingDoctor extends Component {
     }
   };
 
-  handleViewListDoctor = () => {
-    if (this.props.history) {
-      this.props.history.push(`/list-doctor`);
-    }
-  };
+  returnToHome = () => {
+     if (this.props.history) {
+       this.props.history.push(`/home`);
+     }
+  }
 
   render() {
-    let arrDoctors = this.state.arrDoctors;
+    let {arrDoctors} = this.state;
     let { language } = this.props;
     // arrDoctors = arrDoctors.concat(arrDoctors).concat(arrDoctors);
     return (
-      <div className="section-share section-outstanding-doctor">
-        <div className="section-container">
-          <div className="section-header">
-            <span className="title-section">
-              <FormattedMessage id="homepage.outstanding-doctor" />
-            </span>
-            <button className="btn-section"
-            onClick={() => this.handleViewListDoctor()}
-            >
-              <FormattedMessage id="homepage.more-infor" />
-            </button>
+      <>
+        <div className="list-doctor-container">
+          <div className="list-doctor-header">
+            <div className="arrow-icon">
+              <button className="arrow-left">
+                <i className="fa fa-arrow-left" aria-hidden="true"
+                onClick={() => this.returnToHome()}
+                ></i>
+              </button>
+              <h2 className="title-arrow">
+                <FormattedMessage id="homeheader.doctor"/>
+              </h2>
+            </div>
+            <div className="title-search">
+              <div className="search-list">
+                  <FormattedMessage id="patient.list-doctor.search-doctor" defaultMessage="Tìm kiếm bác sĩ">
+                    {(placeholder) => <input placeholder={placeholder} />}
+                  </FormattedMessage>
+                  <i className="fas fa-search"></i>
+              </div>
+            </div>
           </div>
           <div className="section-body">
-            <Slider {...this.props.settings}>
+            <div className="title-text">
+              <span>
+                <FormattedMessage id="homepage.outstanding-doctor" />
+              </span>
+            </div>
+            <div className="search-doctor-results"></div>
               {arrDoctors &&
                 arrDoctors.length > 0 &&
                 arrDoctors.map((item, index) => {
@@ -69,25 +83,20 @@ class OutStandingDoctor extends Component {
                   }
                   let nameVi = `${item.positionData.valueVi}, ${item.lastName} ${item.firstName} `;
                   let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`;
-                  console.log('id ' + item.id);
-                  
+                  console.log('check name specialty ' + item.Doctor_Infor.Specialty.name);
+
                   return (
                     <div
-                      className="section-customize"
+                      className="doctor-container"
                       key={index}
                       onClick={() => this.handleViewDetailDoctor(item)}
                     >
-                      <div className="customize-border">
-                        <div className="outer-bg">
-                          <div
-                            className="bg-image section-outstanding-doctor"
-                            style={{
-                              backgroundImage: `url(${imageBase64})`,
-                            }}
-                          />
+                      <div className="outstanding-doctor">
+                        <div className="doctor-image">
+                          <img src={imageBase64} alt="doctor" />
                         </div>
 
-                        <div className="position text-center">
+                        <div className="doctor-name-specialty">
                           <div className="doctor-name">
                             {language === LANGUAGES.VI ? nameVi : nameEn}
                           </div>
@@ -97,10 +106,9 @@ class OutStandingDoctor extends Component {
                     </div>
                   );
                 })}
-            </Slider>
           </div>{" "}
         </div>
-      </div>
+      </>
     );
   }
 }
@@ -120,5 +128,5 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(OutStandingDoctor)
+  connect(mapStateToProps, mapDispatchToProps)(ListDoctor)
 );

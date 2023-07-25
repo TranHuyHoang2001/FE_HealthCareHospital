@@ -17,7 +17,26 @@ class HomeHeader extends Component {
      if (this.props.history) {
        this.props.history.push(`/home`);
      }
-
+  }
+  GotoListClinic = () => {
+    if (this.props.history) {
+      this.props.history.push(`/list-clinic`);
+    }
+  }
+  GotoListDoctor = () => {
+    if (this.props.history) {
+      this.props.history.push(`/list-doctor`);
+    }
+  }
+  GotoListSpecialty = () => {
+    if (this.props.history) {
+      this.props.history.push(`/list-specialty`);
+    }
+  }
+  GotoListHandbook = () => {
+    if (this.props.history) {
+      this.props.history.push(`/list-handbook`);
+    }
   }
   render() {
     let language = this.props.language; // get language from redux (mapStateToProps)
@@ -33,7 +52,9 @@ class HomeHeader extends Component {
               ></div>
             </div>
             <div className="center-content">
-              <div className="child-content">
+              <div className="child-content"
+                onClick={() => this.GotoListSpecialty()}
+              >
                 <div>
                   <b>
                     {" "}
@@ -44,7 +65,9 @@ class HomeHeader extends Component {
                   <FormattedMessage id="homeheader.search-doctor" />
                 </div>
               </div>
-              <div className="child-content">
+              <div className="child-content"
+                onClick={() => this.GotoListClinic()}  
+              >
                 <div>
                   <b>
                     <FormattedMessage id="homeheader.health-facility" />
@@ -54,7 +77,9 @@ class HomeHeader extends Component {
                   <FormattedMessage id="homeheader.select-room" />
                 </div>
               </div>
-              <div className="child-content">
+              <div className="child-content"
+                onClick={() => this.GotoListDoctor()} 
+              >
                 <div>
                   <b>
                     {" "}
@@ -66,10 +91,12 @@ class HomeHeader extends Component {
                   <FormattedMessage id="homeheader.select-doctor" />
                 </div>
               </div>
-              <div className="child-content">
+              <div className="child-content"
+                onClick={() => this.GotoListHandbook()}
+              >
                 <div>
                   <b>
-                    <FormattedMessage id="homeheader.examination package" />
+                    <FormattedMessage id="homeheader.handbook" />
                   </b>
                 </div>
                 <div className="subs-title">

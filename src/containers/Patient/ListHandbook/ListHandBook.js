@@ -3,11 +3,13 @@ import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
 import Slider from "react-slick";
 import {getAllHandbook} from "../../../services/userService";
-import "./HandBook.scss";
+import "./ListHandBook.scss";
 import { withRouter } from "react-router";
+import HomeFooter from "../../HomePage/HomeFooter";
+import HomeHeader from "../../HomePage/HomeHeader";
 
 
-class HandBook extends Component {
+class ListHandBook extends Component {
    constructor(props) {
     super(props);
     this.state = {
@@ -29,26 +31,21 @@ class HandBook extends Component {
     }
   };
 
-  handleViewListHandBook = () => {
-    if (this.props.history) {
-      this.props.history.push(`/list-handbook`);
-    }
-  };
+  returnToHome = () => {
+     if (this.props.history) {
+       this.props.history.push(`/home`);
+     }
+  }
 
   render() {
     let { dataHandbooks } = this.state;
     return (
-      <div className="section-share section-handbook">
+      <>
+      <HomeHeader/>
         <div className="section-container">
           <div className="section-header">
-            <span className="title-section">
-              <FormattedMessage id="homeheader.handbook" />
-            </span>
-            <button className="btn-section"
-              onClick={() => this.handleViewListHandBook()}
-            >
-              <FormattedMessage id="homepage.more-infor" />
-            </button>
+            <span className="title-section"><FormattedMessage id="homeheader.handbook" /></span>
+            <button className="btn-section">xem thêm</button>
           </div>
           <div className="section-body">
             <Slider {...this.props.settings}>
@@ -75,7 +72,8 @@ class HandBook extends Component {
             </Slider>
           </div>{" "}
         </div>
-      </div>
+      <HomeFooter/>
+      </>
     );
   }
 }
@@ -94,4 +92,4 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HandBook));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ListHandBook));

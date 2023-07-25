@@ -7,6 +7,7 @@ import * as actions from "../../store/actions";
 import "./Login.scss";
 import { FormattedMessage } from "react-intl";
 import { handleLoginApi } from "../../services/userService";
+import { withRouter } from "react-router";
 
 class Login extends Component {
   constructor(props) {
@@ -81,6 +82,13 @@ class Login extends Component {
      }
   }
 
+  returnToHome = () => {
+     if (this.props.history) {
+       this.props.history.push(`/home`);
+     }
+
+  }
+
   render() {
     return (
       <div className="login-background">
@@ -89,7 +97,9 @@ class Login extends Component {
         <div className="login-right">
           <div className="login-container">
             <div className="login-content row">
-              <div className="LoginLogo"></div>
+              <div className="LoginLogo"
+              onClick={() => this.returnToHome()}
+              ></div>
               <div className="col-12 text-login">
 
               </div>
@@ -178,4 +188,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
