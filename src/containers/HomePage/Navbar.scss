@@ -1,0 +1,50 @@
+/* Styles for the closed state */
+.trinhdon {
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: none;
+  z-index: 1200;
+  width: 260px;
+  max-width: 90%;
+  background-color: #fff;
+  overflow-y: auto;
+  .trinhdon-nhom{
+    list-style: none;
+    padding-left: 0px !important;
+    li{
+        border-bottom: 1px solid #eee;
+        h4{
+            padding: 5px 15px;
+            background-color: #f1f1f1;
+            color: #555;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin: 0px !important;
+        }
+        a{
+            padding: 10px 15px;
+            display: block;
+            font-size: 16px;
+            color: #45c3d2;
+            text-decoration: none; 
+        }
+    }
+  }
+  .trinhdon-mxh{
+    display: flex;
+    flex-direction: row;
+    .nut-mxh{
+        margin: 0 20px;
+    }
+  }
+}
+
+/* Styles for the open state */
+.trinhdon.open {
+  display: block;
+  -webkit-transition: display 0s .4s;
+  -moz-transition: display 0s .4s;
+  transition: display 0s .4s;
+}

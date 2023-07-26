@@ -5,9 +5,24 @@ import { FormattedMessage } from "react-intl";
 import { LANGUAGES } from "../../utils/constant";
 import { changeLanguageApp } from "../../store/actions/appActions";
 import { withRouter } from "react-router";
-
+import Navbar from "./Navbar";
 
 class HomeHeader extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isHeaderVisible: false,
+    };
+    this.navbarRef = React.createRef();
+  }
+  componentDidMount() {
+    document.addEventListener("mousedown", this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleClickOutside);
+  }
+
   changeLanguage = (language) => {
     this.props.changeLanguageAppRedux(language);
     // fire redux event: actions
@@ -38,14 +53,32 @@ class HomeHeader extends Component {
       this.props.history.push(`/list-handbook`);
     }
   }
+
+  handleClickOutside = (event) => {
+    if (
+      this.navbarRef.current &&
+      !this.navbarRef.current.contains(event.target)
+    ) {
+      this.setState({ isHeaderVisible: false });
+    }
+  };
+
+  toggleHeader = () => {
+    this.setState((prevState) => ({
+      isHeaderVisible: !prevState.isHeaderVisible,
+    }));
+  };  
   render() {
+    let { isHeaderVisible } = this.state;
     let language = this.props.language; // get language from redux (mapStateToProps)
     return (
       <React.Fragment>
         <div className="home-header-container">
           <div className="home-header-content">
             <div className="left-content">
-              <i className="fas fa-bars"></i>
+              <i className="fas fa-bars"
+                onClick={this.toggleHeader}
+              ></i>
               <div
                 className="header-logo"
                 onClick={() => this.returnToHome()}
@@ -136,6 +169,16 @@ class HomeHeader extends Component {
             </div>
           </div>
         </div>
+        {/* Overlay for darkness outside the Navbar */}
+        {isHeaderVisible && (
+          <div
+            className="overlay"
+            onClick={this.toggleHeader}
+          />
+        )}
+                {/* Conditionally render the Navbar based on isHeaderVisible */}
+        {/* Pass isHeaderVisible as a prop to the Navbar component */}
+        <Navbar ref={this.navbarRef} isVisible={isHeaderVisible} />
         {this.props.isShowBanner === true && (
           <div className="home-header-banner">
             <div className="content-up">
