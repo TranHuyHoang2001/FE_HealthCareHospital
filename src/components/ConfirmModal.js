@@ -92,7 +92,7 @@ class ConfirmModal extends Component {
                         </div>
                     </div>
                 </div>
-            </Modal >
+            </Modal>
         );
     }
 
