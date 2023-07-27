@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
 import bct from "../../assets/bo-cong-thuong.svg";
+import "./HomeFooter.scss";
+
 class HomeFooter extends Component {
   render() {
     return (
@@ -33,53 +35,48 @@ class HomeFooter extends Component {
               />
             </div>
           </div>
-          <div className="footer-other">
-            <div className="footer-center">
-              <ul>
-                <li>
-                  <a href="#">Liên hệ hợp tác</a>
-                </li>
-                <li>
-                  <a href="#">Gói chuyển đổi số doanh nghiệp</a>
-                </li>
-                <li>
-                  <a href="#">Tuyển dụng</a>
-                </li>
-                <li>
-                  <a href="#">Câu hỏi thường gặp</a>
-                </li>
-                <li>
-                  <a href="#">Điều khoản sử dụng</a>
-                </li>
-                <li>
-                  <a href="#">Chính sách Bảo mật</a>
-                </li>
-                <li>
-                  <a href="#">Quy trình hỗ trợ giải quyết khiếu nại</a>
-                </li>
-                <li>
-                  <a href="#">Quy chế hoạt động</a>
-                </li>
-              </ul>
+          <div className="footer-center">
+            <ul>
+              <li>
+                <a href="#">Liên hệ hợp tác</a>
+              </li>
+              <li>
+                <a href="#">Tuyển dụng</a>
+              </li>
+              <li>
+                <a href="#">Câu hỏi thường gặp</a>
+              </li>
+              <li>
+                <a href="#">Điều khoản sử dụng</a>
+              </li>
+              <li>
+                <a href="#">Chính sách Bảo mật</a>
+              </li>
+              <li>
+                <a href="#">Quy trình hỗ trợ giải quyết khiếu nại</a>
+              </li>
+              <li>
+                <a href="#">Quy chế hoạt động</a>
+              </li>
+            </ul>
+          </div>
+          <div className="footer-right">
+            <div className="TruSo">
+              <div className="fw-bold fs-5">Trụ sở tại Nam Định</div>
+              <div className="fw-light fs-6">
+                22 Nguyễn Tri Phương, TP Nam Định, Tỉnh Nam Định
+              </div>
             </div>
-            <div className="footer-right">
-              <div className="TruSo">
-                <div className="fw-bold fs-5">Trụ sở tại Nam Định</div>
-                <div className="fw-light fs-6">
-                  22 Nguyễn Tri Phương, TP Nam Định, Tỉnh Nam Định
-                </div>
+            <div className="VanPhong">
+              <div className="fw-bold fs-5">Văn phòng tại Hà Nội</div>
+              <div className="fw-light fs-6">
+                28 Thành Thái, Dịch Vọng, Cầu Giấy, Hà Nội
               </div>
-              <div className="VanPhong">
-                <div className="fw-bold fs-5">Văn phòng tại Hà Nội</div>
-                <div className="fw-light fs-6">
-                  28 Thành Thái, Dịch Vọng, Cầu Giấy, Hà Nội
-                </div>
-              </div>
-              <div className="HoTro">
-                <div className="fw-bold fs-5">Hỗ trợ khách hàng</div>
-                <div className="fw-light fs-6">
-                  support@HealthHospital.vn (7h - 18h)
-                </div>
+            </div>
+            <div className="HoTro">
+              <div className="fw-bold fs-5">Hỗ trợ khách hàng</div>
+              <div className="fw-light fs-6">
+                support@HealthHospital.vn (7h - 18h)
               </div>
             </div>
           </div>

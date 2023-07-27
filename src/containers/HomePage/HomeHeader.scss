@@ -112,7 +112,7 @@
   background-position: center;
   background-repeat: no-repeat;
   height: 510px;
-  width: 1370px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   .content-up {
@@ -208,3 +208,52 @@
     }
   }
 }
+
+
+/* Define variables for breakpoints */
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1120px;
+$largeDesktop: 1200px;
+
+/* Mobile styles */
+@media (max-width: $mobile) {
+  /* Your mobile styles here */
+}
+
+@media (max-width: calc(#{$tablet} - 1px)) {
+  /* Your tablet styles here */
+.home-header-container{
+  padding: 0 20px !important;
+  .home-header-content{
+    .left-content{
+      width: 75%;
+    }
+    .center-content{
+      display:none !important;
+    }
+    .right-content{
+      width: 25%;
+      .support{
+        display: none;
+      }
+    }
+  }
+}
+}
+
+/* Tablet styles */
+@media (min-width: $tablet) and (max-width: calc(#{$desktop} - 1px)) {
+  /* Your tablet styles here */
+}
+
+/* Desktop styles */
+@media (min-width: $desktop) and (max-width: calc(#{$largeDesktop} - 1px)) {
+  /* Your desktop styles here */
+}
+
+/* Large desktop styles */
+@media (min-width: $largeDesktop) {
+  /* Your large desktop styles here */
+}
+
