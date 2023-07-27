@@ -51,7 +51,7 @@ class LikeAndShare extends Component {
     return (
       <>
         <div
-          class="fb-comments"
+          className="fb-comments"
           data-href={dataHref}
           data-width={width ? width : ""}
           data-numposts={numPost ? numPost : 5}
