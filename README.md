@@ -1,4 +1,4 @@
-**HealthCarreHospital**
+**HealthCareHospital**
 
 https://healthcarehospital.onrender.com
 
